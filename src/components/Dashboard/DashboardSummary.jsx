@@ -1,5 +1,5 @@
 import React from 'react'
-import SubHeading from './SubHeading'
+import SubHeading from '../SubHeading'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';

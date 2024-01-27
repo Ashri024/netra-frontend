@@ -4,7 +4,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
     isDark: false,
     activeMenu: true,
-    username:"Ashri"
+    username:"Ashri",
+    isLoggedIn: false,
 };
 
 const slice = createSlice({
@@ -19,9 +20,12 @@ const slice = createSlice({
         },
         changeUsername(state, action) {
             state.username = action.payload;
+        },
+        changeIsLoggedIn(state, action) {
+            state.isLoggedIn = action.payload;
         }
     },
 });
 
-export const { toggleDarkMode, toggleActiveMenu } = slice.actions;
+export const { toggleDarkMode, toggleActiveMenu, changeIsLoggedIn, changeUsername } = slice.actions;
 export default slice.reducer;

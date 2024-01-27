@@ -5,7 +5,8 @@ import { useSelector } from 'react-redux'
 function Home() {
   const username = useSelector((state) => state.username);
   return (
-    <div className=''>
+    
+    <div className='h-auto'>
       <Heading title="Dashboard" username={username}/>
       <DashboardSummary/>
       <DashboardCharts/>
