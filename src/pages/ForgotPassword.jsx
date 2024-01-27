@@ -23,11 +23,11 @@ function ForgotPassword() {
         e.preventDefault();
         console.log("Clicked");
         dispatch(changeIsLoggedIn(true));
-        if(email){
+        if(email && !emailError){
         alert("Password reset link has been sent to your email");
         navigate('/Login');
         }else{
-            alert("Please Enter the email")
+            alert("Please Enter the email correctly")
         }
     }
 

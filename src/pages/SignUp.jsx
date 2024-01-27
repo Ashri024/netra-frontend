@@ -13,6 +13,7 @@ function SignUp() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [emailError, setEmailError] = useState(false);
+    const [passwordError, setPasswordError] = useState(false);
     const dispatch = useDispatch();
 
     const handleEmailChange = (event) => {
@@ -23,6 +24,7 @@ function SignUp() {
 
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
+        setPasswordError(event.target.value.length < 8);
     };
 
     const handleConfirmPasswordChange = (event) => {
@@ -37,10 +39,10 @@ function SignUp() {
         }
         console.log("Clicked");
         dispatch(changeIsLoggedIn(true));
-        if(email && password && confirmPassword){
+        if(email && password && confirmPassword && !emailError && !passwordError && (password === confirmPassword) ){
         navigate('/Login');
         }else {
-            alert("Please fill all the fields")
+            alert("Please fill all the fields correctly")
         }
     }
 
@@ -62,6 +64,8 @@ function SignUp() {
             />
 
             <TextField
+                error={passwordError}
+                helperText={passwordError ? 'Password must be at least 8 characters' : ''}
                 variant="outlined"
                 margin="normal"
                 required
