@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { MdOutlineCancel,MdSpaceDashboard, MdCompare} from 'react-icons/md'
-import {default as TooltipComponent} from '@mui/material/toolTip'
+import {Tooltip} from '@mui/material'
 import { IoMdContacts } from 'react-icons/io'
 import { FaCommentAlt } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux'
@@ -40,7 +40,7 @@ function Sidebar() {
              className="items-center gap-3 ml-3 mt-4 flex text-3xl font-extrabold tracking-tight dark:text-white text-slate-900">
               <MdCompare/> <span className='netraName'>Netra</span>
             </Link>
-            <TooltipComponent title="Menu" placement="left-start" arrow>
+            <Tooltip title="Menu" placement="left-start" arrow>
               <button
                 type="button"
                 onClick={() => dispatch(toggleActiveMenu())}
@@ -48,7 +48,7 @@ function Sidebar() {
               >
                 <MdOutlineCancel />
               </button>
-            </TooltipComponent>
+            </Tooltip>
           </div>
 
           <div className="mt-10 ">
