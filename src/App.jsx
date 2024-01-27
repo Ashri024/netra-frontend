@@ -1,6 +1,6 @@
 import './App.css'
 import { useState } from 'react'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, HashRouter} from 'react-router-dom'
 import {Sidebar, Navbar} from './components'
 import {Home, About, Contact, LoginRedirect, Login, SignUp,ForgotPassword} from './pages'
 import { useDispatch, useSelector } from 'react-redux'
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className={isDark ? "dark": ""}>
-      <BrowserRouter>
+      <HashRouter>
       <Routes>
         <Route path='/Login/*' element={
           <div className="flex flex-col md:flex-row justify-center items-center">
@@ -97,7 +97,7 @@ function App() {
         </div>
         </div>} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   )
 }
