@@ -6,3 +6,8 @@
 .netraName{
     font-family: 'Kalam', cursive;
 }
+.dragging {
+    border-color: #ff4500;
+    background-color: #43271d2e;
+    opacity: 0.6;
+}

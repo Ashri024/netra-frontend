@@ -2,7 +2,7 @@ import './App.css'
 import { useState } from 'react'
 import {BrowserRouter, Routes, Route, HashRouter} from 'react-router-dom'
 import {Sidebar, Navbar} from './components'
-import {Home, About, Contact, LoginRedirect, Login, SignUp,ForgotPassword} from './pages'
+import {Home, Compare, LoginRedirect, Login, SignUp,ForgotPassword} from './pages'
 import { useDispatch, useSelector } from 'react-redux'
 import LoginHero from './assets/loginHero.png';
 import LoginBg from './assets/loginBg.png';
@@ -57,13 +57,13 @@ function App() {
               <Sidebar />
             </div>
           ) : (
-            <div className="w-0 dark:bg-secondary-dark-bg">
+            <div className="w-16 fixed sidebar dark:bg-secondary-dark-bg bg-blue-950 z-10">
               <Sidebar />
             </div>
           )}
 
         {/* Designing the main part */}
-        <div className={activeMenu? "md:ml-72 flex flex-col w-full" : " flex flex-col w-full"} >
+        <div className={activeMenu? "md:ml-72 flex flex-col w-full" : "md:ml-16 flex flex-col w-full"} >
 
           {/* <Header /> */}
           <div className='fixed top-0 right-0 w-full' id='navbar'>
@@ -71,23 +71,22 @@ function App() {
           </div>
 
           {/* Main Section */}
-          <div className="flex flex-col w-full h-screen overflow-auto p-4 mt-12">
+          <div className="flex flex-col w-full h-auto min-h-screen overflow-auto p-4 mt-12">
             
             <Routes>
               {isLoggedIn? (
                 <>
                 <Route path="/" element={(<Home/>)} />
                 <Route path="/Dashboard" element={(<Home/>)} />
-                <Route path="/About" element={(<About/>)} />
-                <Route path="/Contact" element={(<Contact/>)} />
+                <Route path="/Compare" element={(<Compare/>)} />
                 </>
                 )
               :(
                 <>
                 <Route path="/" element={(<LoginRedirect/>)} />
                 <Route path="/Dashboard" element={(<LoginRedirect/>)} />
-                <Route path="/About" element={(<LoginRedirect/>)} />
-                <Route path="/Contact" element={(<LoginRedirect/>)} />
+                <Route path="/Compare" element={(<LoginRedirect/>)} />
+
                 </>
               )
               }

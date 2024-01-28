@@ -1,14 +1,16 @@
 import React from 'react' 
 import Heading from '../components/Heading'
 import { useSelector } from 'react-redux'
+import {UploadImages} from '../components'
+function Compare() {
 
-function Contact() {
   const username = useSelector((state) => state.username);
   return (
     <div>
-    <Heading title="Contact" username={username} />
+    <Heading title="Compare" username={username}/>
+    <UploadImages/>
     </div>
   )
 }
 
-export default Contact
+export default Compare

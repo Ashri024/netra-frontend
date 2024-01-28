@@ -29,7 +29,7 @@ function Navbar() {
   const username = useSelector((state) => state.username);
   const activeMenu = useSelector((state) => state.activeMenu);
   return (
-    <div className={`h-16 flex items-center relative justify-between p-2 ${activeMenu? "ml-72":"" } bg-white`}>
+    <div className={`h-16 flex items-center relative justify-between p-2 ${activeMenu? "ml-72":"ml-16" } bg-white`}>
       <NavButton title="Menu" customFunc={() => dispatch(toggleActiveMenu())} icon={<AiOutlineMenu />} color="" dotColor="white" />
       <div className="flex">
         <Tooltip title="Profile" placement="bottom" arrow>
